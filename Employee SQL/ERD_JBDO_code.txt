@@ -1,0 +1,38 @@
+# Modify this code to update the DB schema diagram.
+# To reset the sample schema, replace everything with
+# two dots ('..' - without quotes).
+
+Departments
+------------
+department_number PK VARCHAR
+department_name VARCHAR
+
+Dept_manager
+------------
+dept_no VARCHAR FK >- Departments.department_number
+emp_no INT FK >- Emplyees.employee_number
+
+Dept_emp 
+------------
+emp_no PK int FK >- Emplyees.employee_number
+dept_no VARCHAR FK >- Departments.department_number
+
+Emplyees 
+------------
+employee_number PK INT FK >- Salaries.emp_no
+employee_title_id VARCHAR
+birth_date DATE
+first_name VARCHAR
+last_name VARCHAR
+sex VARCHAR
+hire_date DATE
+
+Titles
+------------
+title_id PK VARCHAR FK >- Emplyees.employee_title_id
+Title VARCHAR
+
+Salaries
+------------
+emp_no PK INT
+salary INT
